@@ -17,7 +17,7 @@ export default function KpssNeKadarKaldiPage() {
   const today = longTurkishDate();
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-12 sm:py-16">
+    <main className="mx-auto max-w-6xl px-3 py-12 sm:px-5 sm:py-16 lg:px-8">
       <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">KPSS’ye ne kadar kaldı?</h1>
       <p className="mt-3 text-sm text-cyan-100/80">Referans tarihi: {today}</p>
 
@@ -28,7 +28,7 @@ export default function KpssNeKadarKaldiPage() {
         tarama, pekiştirme, branş denemesi.
       </p>
 
-      <div className="my-10 flex justify-center">
+      <div className="my-10 w-full">
         <CountdownStack exams={EXAMS} />
       </div>
 

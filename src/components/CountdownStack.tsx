@@ -40,20 +40,22 @@ export function CountdownStack({ exams }: { exams: ExamInfo[] }) {
   );
 
   return (
-    <div className="flex w-full max-w-xl flex-col gap-4">
+    <div className="flex w-full max-w-none flex-col gap-5 sm:gap-6 lg:gap-8">
       {rows.map(({ exam: e, targetMs, r }) => (
         <article
           key={e.key}
-          className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/10 p-5 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.65)] backdrop-blur-md"
+          className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/10 p-6 shadow-[0_24px_80px_-28px_rgba(0,0,0,0.72)] backdrop-blur-md sm:p-8 md:p-10 lg:p-12"
         >
-          <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan-400/20 blur-2xl" />
-          <div className="pointer-events-none absolute -bottom-16 -left-10 h-44 w-44 rounded-full bg-indigo-500/25 blur-2xl" />
-          <div className="relative flex flex-col gap-1">
-            <h2 className="text-lg font-semibold tracking-tight text-white">{e.title}</h2>
-            <p className="text-sm text-white/70">{e.subtitle}</p>
-            <p className="mt-3 text-xs uppercase tracking-[0.2em] text-white/50">Sınava kalan süre</p>
+          <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-cyan-400/20 blur-3xl sm:h-72 sm:w-72" />
+          <div className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-indigo-500/25 blur-3xl sm:h-80 sm:w-80" />
+          <div className="relative flex w-full flex-col gap-1">
+            <h2 className="text-xl font-bold tracking-tight text-white sm:text-2xl md:text-3xl lg:text-4xl">{e.title}</h2>
+            <p className="text-sm text-white/75 sm:text-base md:text-lg">{e.subtitle}</p>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.25em] text-white/50 sm:mt-5 sm:text-sm">
+              Sınava kalan süre
+            </p>
 
-            <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-5">
+            <div className="mt-4 grid w-full grid-cols-2 gap-2 sm:mt-6 sm:grid-cols-3 sm:gap-3 md:grid-cols-5 md:gap-4 lg:gap-5">
               {UNITS.map(({ key, label }) => {
                 const v = r[key];
                 const showPad = key === "hours" || key === "minutes" || key === "seconds";
@@ -61,16 +63,20 @@ export function CountdownStack({ exams }: { exams: ExamInfo[] }) {
                 return (
                   <div
                     key={key}
-                    className="rounded-xl border border-white/10 bg-black/20 px-2 py-3 text-center sm:px-3"
+                    className="flex min-h-[5.5rem] flex-col items-center justify-center rounded-2xl border border-white/10 bg-black/25 px-2 py-4 text-center sm:min-h-[6.5rem] md:min-h-32 md:rounded-3xl md:py-6 lg:min-h-36"
                   >
-                    <div className="text-2xl font-semibold tabular-nums tracking-tight text-white sm:text-3xl">{text}</div>
-                    <div className="mt-1 text-[10px] font-medium uppercase tracking-wider text-white/55 sm:text-xs">{label}</div>
+                    <div className="font-bold leading-none tabular-nums tracking-tight text-white text-[clamp(2rem,min(14vw,7.5rem),7.5rem)] md:text-[clamp(3.25rem,min(11vw,8.5rem),8.5rem)]">
+                      {text}
+                    </div>
+                    <div className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-white/60 sm:text-xs md:text-sm">
+                      {label}
+                    </div>
                   </div>
                 );
               })}
             </div>
 
-            <p className="mt-2 text-[11px] leading-snug text-white/45 sm:text-xs">
+            <p className="mt-3 text-[11px] leading-snug text-white/45 sm:mt-4 sm:text-xs">
               Ay göstergesi 30 günlük birimdir (takvim ayı değil). Sınav saati kılavuza göre{" "}
               <code className="rounded bg-white/10 px-1 py-0.5 text-[10px] text-white/70">startTimeTR</code> alanından
               düzenlenir.

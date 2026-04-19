@@ -13,7 +13,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-full flex-col">
       <header className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex w-full max-w-[min(100%,88rem)] flex-col gap-3 px-3 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5 lg:px-8">
           <Link href="/" className="text-lg font-semibold tracking-tight text-white">
             KPSS Sayaç
           </Link>
@@ -31,8 +31,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
         </div>
       </header>
       <div className="flex-1">{children}</div>
-      <footer className="border-t border-white/10 bg-slate-950 px-4 py-10 text-sm text-white/60">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6">
+      <footer className="border-t border-white/10 bg-slate-950 px-3 py-10 text-sm text-white/60 sm:px-5 lg:px-8">
+        <div className="mx-auto flex w-full max-w-[min(100%,88rem)] flex-col gap-6">
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-white/70">
             <Link className="hover:text-cyan-200" href="/gizlilik-politikasi">
               Gizlilik politikası

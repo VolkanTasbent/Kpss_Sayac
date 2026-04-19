@@ -16,7 +16,7 @@ export default function KpssSayacPage() {
   const today = longTurkishDate();
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-12 sm:py-16">
+    <main className="mx-auto max-w-6xl px-3 py-12 sm:px-5 sm:py-16 lg:px-8">
       <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">KPSS sayacı</h1>
       <p className="mt-3 text-sm text-cyan-100/80">Güncel: {today}</p>
       <p className="mt-6 text-base leading-relaxed text-white/80">
@@ -25,7 +25,7 @@ export default function KpssSayacPage() {
         aynı düzen korunarak okunurluk artırılır.
       </p>
 
-      <div className="my-10 flex justify-center">
+      <div className="my-10 w-full">
         <CountdownStack exams={EXAMS} />
       </div>
 

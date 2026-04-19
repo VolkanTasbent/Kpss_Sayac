@@ -15,8 +15,8 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-500/25 via-slate-950 to-slate-950" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
-        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-10 px-4 pb-16 pt-12 sm:pb-20 sm:pt-16">
-          <div className="max-w-2xl text-center">
+        <div className="relative mx-auto flex w-full max-w-[min(100%,88rem)] flex-col items-stretch gap-10 px-3 pb-16 pt-10 sm:gap-12 sm:px-5 sm:pb-20 sm:pt-14 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm text-cyan-100/80">Bugün: {today}</p>
             <h1 className="mt-2 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
               KPSS ve AGS için modern geri sayım
@@ -27,11 +27,13 @@ export default function HomePage() {
               günceller.
             </p>
           </div>
-          <CountdownStack exams={EXAMS} />
+          <div className="w-full">
+            <CountdownStack exams={EXAMS} />
+          </div>
         </div>
       </section>
 
-      <div className="mx-auto max-w-4xl px-4 py-8">
+      <div className="mx-auto max-w-6xl px-3 py-8 sm:px-5 lg:px-8">
         <AdSenseSlot slot={slotHome} className="mb-10" />
       </div>
 
