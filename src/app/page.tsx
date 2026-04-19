@@ -1,65 +1,98 @@
-import Image from "next/image";
+import Link from "next/link";
+import { CountdownStack } from "@/components/CountdownStack";
+import { NetCalculator } from "@/components/NetCalculator";
+import { AdSenseSlot } from "@/components/AdSenseSlot";
+import { EXAMS } from "@/config/exams";
+import { longTurkishDate } from "@/lib/dates";
 
-export default function Home() {
+const slotHome = process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOME ?? "";
+
+export default function HomePage() {
+  const today = longTurkishDate();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-500/25 via-slate-950 to-slate-950" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-10 px-4 pb-16 pt-12 sm:pb-20 sm:pt-16">
+          <div className="max-w-2xl text-center">
+            <p className="text-sm text-cyan-100/80">Bugün: {today}</p>
+            <h1 className="mt-2 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              KPSS ve AGS için modern geri sayım
+            </h1>
+            <p className="mt-4 text-pretty text-base leading-relaxed text-white/75 sm:text-lg">
+              Lisans KPSS, ön lisans KPSS ve AGS tarihleri yan yana değil; alt alta, mobilde okunaklı ve sade bir düzenle
+              sunulur. Aşağıdaki sayaçlar İstanbul (UTC+3) takvim gününe göre &quot;kaç gün kaldı&quot; bilgisini
+              günceller.
+            </p>
+          </div>
+          <CountdownStack exams={EXAMS} />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <div className="mx-auto max-w-4xl px-4 py-8">
+        <AdSenseSlot slot={slotHome} className="mb-10" />
+      </div>
+
+      <section className="border-t border-white/10 bg-white text-zinc-900">
+        <div className="mx-auto max-w-3xl px-4 py-14 sm:py-16">
+          <article className="space-y-4 text-base leading-relaxed text-zinc-700">
+            <h2 className="text-2xl font-semibold tracking-tight text-zinc-900">Neden ayrı sayaçlar?</h2>
+            <p>
+              Kamu personel seçme sınavına hazırlanan adayların en çok ihtiyaç duyduğu bilgi, doğru sınav gününe göre
+              kalan süreyi görmektir. Lisans düzeyindeki KPSS ile ön lisans düzeyindeki KPSS farklı oturum ve takvim
+              dilimlerine sahip olabilir; AGS ise akademik başvurular için ayrı bir sınav takvimidir. Bu yüzden tek bir
+              genel sayaç yerine, her hedef için ayrı kart göstererek kafa karışıklığını azaltmayı hedefledik.
+            </p>
+            <h3 className="mt-8 text-xl font-semibold text-zinc-900">Geri sayım nasıl hesaplanıyor?</h3>
+            <p>
+              Gün farkı, tam gün esasına göre hesaplanır; saat dilimi olarak Avrupa/İstanbul kullanılır. Sınav günü
+              geldiğinde değer sıfıra iner. Kesin oturum saatleri ve salon bilgileri için her zaman ÖSYM&apos;nin
+              güncel kılavuzunu esas alın; buradaki tarihler yayındaki özet takvime göre yapılandırılmıştır ve resmi
+              değişikliklerde güncellenmelidir.
+            </p>
+            <h3 className="mt-8 text-xl font-semibold text-zinc-900">Çalışma planına nasıl yansır?</h3>
+            <p>
+              Kalan gün sayısı tek başına motivasyon sağlar; asıl fayda, haftalık tekrar bloklarını ve deneme
+              sıklığını gerçekçi biçimde ayarlamaktır. Net hesaplama bölümü, deneme sonrası hızlı karşılaştırma yapmanız
+              için pratik bir özet sunar; nihai puan dönüşümü ise sınav yılındaki katsayılar ve kurallarla belirlenir.
+            </p>
+            <h3 className="mt-8 text-xl font-semibold text-zinc-900">Site haritası ve içerik</h3>
+            <p>
+              Arama motorlarında sürdürülebilir görünürlük için yalnızca sayaç yetmez; kullanıcıya farklı niyetlerde
+              yardımcı olacak ayrı sayfalar hazırladık. &quot;Kaç gün kaldı&quot; odaklı sayfa ile &quot;ne kadar
+              kaldı&quot; planlama odaklı sayfa birbirinin kopyası değildir; tekrarlayan metin yerine farklı başlıklar
+              ve öneriler sunulur. Net hesaplama sayfası ise formülü ve sınırlarını açıkça anlatır.
+            </p>
+            <h3 className="mt-8 text-xl font-semibold text-zinc-900">Şeffaflık ve reklam politikaları</h3>
+            <p>
+              Ziyaretçilerin haklarını netleştirmek ve üçüncü taraf reklam teknolojilerinde beklentiyi yönetmek için
+              ayrı yasal sayfalar tutuyoruz. Kişisel verilerin işlenmesi, çerezler ve hizmetin hukuki çerçevesi şu
+              belgelerde açıklanır:{" "}
+              <Link className="font-medium text-cyan-700 underline-offset-4 hover:underline" href="/gizlilik-politikasi">
+                gizlilik politikası
+              </Link>
+              {", "}
+              <Link className="font-medium text-cyan-700 underline-offset-4 hover:underline" href="/cerez-politikasi">
+                çerez politikası
+              </Link>{" "}
+              ve{" "}
+              <Link className="font-medium text-cyan-700 underline-offset-4 hover:underline" href="/kullanim-kosullari">
+                kullanım koşulları
+              </Link>
+              . Bu sayfalar yalnızca şablon değil; siteye özgü dil ve kapsamla yazıldı; yayıncı olarak iletişim
+              e-postanızı ortam değişkeniyle eklemeniz, KVKK başvurularında izlenebilirlik sağlar.
+            </p>
+          </article>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="border-t border-zinc-200 bg-zinc-50 py-14 sm:py-16">
+        <div className="mx-auto flex max-w-5xl flex-col items-center px-4">
+          <NetCalculator />
+        </div>
+      </section>
+    </>
   );
 }
