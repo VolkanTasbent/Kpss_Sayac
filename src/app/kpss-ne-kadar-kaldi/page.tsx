@@ -58,8 +58,8 @@ export default function KpssNeKadarKaldiPage() {
 
       <p className="mt-6 text-sm text-white/60">
         İlgili:{" "}
-        <Link className="text-cyan-300 underline-offset-4 hover:underline" href="/kpss-2026-kac-gun-kaldi">
-          2026 kaç gün kaldı
+        <Link className="text-cyan-300 underline-offset-4 hover:underline" href="/kpss-rehber">
+          KPSS rehberi (tüm konular)
         </Link>
         {" · "}
         <Link className="text-cyan-300 underline-offset-4 hover:underline" href="/kpss-net-hesaplama">

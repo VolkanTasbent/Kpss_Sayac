@@ -1,10 +1,10 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { SiteMapInline } from "@/components/SiteMapInline";
 
+/** Üst menü sade; diğer sayfalar ana sayfa + footer site haritası + sitemap ile bulunur. */
 const nav = [
   { href: "/", label: "Ana sayfa" },
-  { href: "/kpss-2026-kac-gun-kaldi", label: "2026 kaç gün" },
-  { href: "/kpss-ne-kadar-kaldi", label: "Ne kadar kaldı" },
   { href: "/kpss-sayac", label: "Sayaç" },
   { href: "/kpss-net-hesaplama", label: "Net hesaplama" },
 ];
@@ -33,6 +33,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <div className="flex-1">{children}</div>
       <footer className="border-t border-white/10 bg-slate-950 px-3 py-10 text-sm text-white/60 sm:px-5 lg:px-8">
         <div className="mx-auto flex w-full max-w-[min(100%,88rem)] flex-col gap-6">
+          <SiteMapInline variant="onDark" />
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-white/70">
             <Link className="hover:text-cyan-200" href="/gizlilik-politikasi">
               Gizlilik politikası
@@ -47,7 +48,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p>
               Bu site bilgilendirme amaçlıdır; kesin tarihler ve kurallar için ÖSYM resmi kaynaklarını kullanın.
-              Reklam ve çerezler için yasal metinler yukarıdadır.
+              Ek KPSS sayfaları üst menüde yok; site haritası satırı, ana sayfa metni ve sitemap ile erişilebilir.
             </p>
             <p className="shrink-0 text-white/40">© {new Date().getFullYear()} KPSS Sayaç</p>
           </div>

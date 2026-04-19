@@ -64,11 +64,16 @@ export default function Kpss2026KacGunKaldiPage() {
       </p>
 
       <p className="mt-6 text-base leading-relaxed text-white/80">
-        Diğer içerikler: <Link className="text-cyan-300 underline-offset-4 hover:underline" href="/kpss-ne-kadar-kaldi">planlama odağı</Link>
-        {", "}
-        <Link className="text-cyan-300 underline-offset-4 hover:underline" href="/kpss-sayac">sayaç sayfası</Link>
-        {", "}
-        <Link className="text-cyan-300 underline-offset-4 hover:underline" href="/kpss-net-hesaplama">net hesaplama</Link>.
+        Diğer konular ve arama sayfaları:{" "}
+        <Link className="text-cyan-300 underline-offset-4 hover:underline" href="/kpss-rehber">
+          KPSS rehberi
+        </Link>
+        {" "}
+        (tek listede tüm başlıklar). Net için{" "}
+        <Link className="text-cyan-300 underline-offset-4 hover:underline" href="/kpss-net-hesaplama">
+          hesaplama sayfası
+        </Link>
+        .
       </p>
     </main>
   );

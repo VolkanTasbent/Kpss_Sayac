@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteMapInline } from "@/components/SiteMapInline";
 import { CountdownStack } from "@/components/CountdownStack";
 import { NetCalculator } from "@/components/NetCalculator";
 import { AdSenseSlot } from "@/components/AdSenseSlot";
@@ -62,11 +63,15 @@ export default function HomePage() {
             </p>
             <h3 className="mt-8 text-xl font-semibold text-zinc-900">Site haritası ve içerik</h3>
             <p>
-              Arama motorlarında sürdürülebilir görünürlük için yalnızca sayaç yetmez; kullanıcıya farklı niyetlerde
-              yardımcı olacak ayrı sayfalar hazırladık. &quot;Kaç gün kaldı&quot; odaklı sayfa ile &quot;ne kadar
-              kaldı&quot; planlama odaklı sayfa birbirinin kopyası değildir; tekrarlayan metin yerine farklı başlıklar
-              ve öneriler sunulur. Net hesaplama sayfası ise formülü ve sınırlarını açıkça anlatır.
+              Arama motorlarında sürdürülebilir görünürlük için yalnızca sayaç yetmez; farklı arama niyetleri için ayrı
+              sayfalar da vardır (&quot;kaç gün kaldı&quot;, &quot;geri sayım&quot;, &quot;2026 KPSS&quot; vb.). Üst menü
+              sade kalsın diye bu sayfalar menüde listelenmez; aşağıdaki satırda doğrudan linkler, altta footer’da aynı
+              liste ve <code className="rounded bg-zinc-200 px-1 text-xs">sitemap.xml</code> ile arama motorlarına
+              yol gösterilir. Net hesaplama sayfası formülü ve sınırlarını açıkça anlatır.
             </p>
+            <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3">
+              <SiteMapInline variant="onLight" />
+            </div>
             <h3 className="mt-8 text-xl font-semibold text-zinc-900">Şeffaflık ve reklam politikaları</h3>
             <p>
               Ziyaretçilerin haklarını netleştirmek ve üçüncü taraf reklam teknolojilerinde beklentiyi yönetmek için
