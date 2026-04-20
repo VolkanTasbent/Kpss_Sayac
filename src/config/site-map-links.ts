@@ -65,7 +65,7 @@ export const HEADER_NAV_LINKS = [
   { href: "/kpss-sayac", label: "KPSS sayacı" },
   { href: "/kpss-net-hesaplama", label: "Net hesaplama" },
   { href: "/kpss-rehber", label: "Tüm konular" },
-  { href: "/kpss-kac-gun-kaldi", label: "Kaç gün kaldı" },
+  { href: "/kpss-kac-gun-kaldi", label: "KPSS kaç gün kaldı" },
 ] as const;
 
 export const LEGAL_SITEMAP_PATHS = [

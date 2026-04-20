@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteMapInline } from "@/components/SiteMapInline";
 import { CountdownStackHost } from "@/components/CountdownStackHost";
@@ -7,6 +8,20 @@ import { EXAMS } from "@/config/exams";
 import { longTurkishDate } from "@/lib/dates";
 
 const slotHome = process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOME ?? "";
+
+export const metadata: Metadata = {
+  title: "KPSS kaç gün kaldı — canlı sayaç",
+  description:
+    "KPSS kaç gün kaldı mı? Lisans, ön lisans, ortaöğretim (lise) KPSS ve AGS için güncel kalan süre ve net hesaplama. İstanbul saatine göre canlı geri sayım.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "KPSS kaç gün kaldı — canlı sayaç",
+    description: "KPSS ve AGS için güncel geri sayım ve net hesaplama tek yerde.",
+    url: "/",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
 
 export default function HomePage() {
   const today = longTurkishDate();
@@ -24,6 +39,16 @@ export default function HomePage() {
             </h1>
             <p className="mt-4 text-pretty text-base leading-relaxed text-white/75 sm:text-lg">
               Tüm sınavlar için kalan süreyi tek ekranda hızlıca takip edebilirsiniz.
+            </p>
+            <p className="mt-3 text-sm text-cyan-100/85 sm:text-base">
+              <span className="text-white/70">Çok aranan:</span>{" "}
+              <Link
+                className="font-medium text-cyan-200 underline-offset-4 hover:underline"
+                href="/kpss-kac-gun-kaldi"
+              >
+                KPSS kaç gün kaldı
+              </Link>{" "}
+              — ayrı sayfada açıklamalı süre özeti
             </p>
           </div>
           <div className="w-full">

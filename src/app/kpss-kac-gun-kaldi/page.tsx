@@ -5,21 +5,81 @@ import { AdSenseSlot } from "@/components/AdSenseSlot";
 import { EXAMS } from "@/config/exams";
 import { longTurkishDate } from "@/lib/dates";
 
+const canonicalPath = "/kpss-kac-gun-kaldi";
+
 export const metadata: Metadata = {
-  title: "KPSS'ye kaç gün kaldı? Güncel süre",
+  title: "KPSS kaç gün kaldı — güncel canlı sayaç",
   description:
-    "KPSS lisans, ön lisans, ortaöğretim ve AGS için kaç gün kaldı sorusunun cevabı: canlı geri sayım ve açıklamalar.",
-  keywords: ["kpss kaç gün kaldı", "kpssye kaç gün kaldı", "kpss geri sayım gün"],
+    "KPSS kaç gün kaldı? Lisans, ön lisans, ortaöğretim (lise) KPSS ve AGS için güncel kalan gün, saat ve dakika. İstanbul saatine göre canlı geri sayım; tarihleri ÖSYM kılavuzu ile doğrulayın.",
+  keywords: [
+    "kpss kaç gün kaldı",
+    "kpssye kaç gün kaldı",
+    "kpss kaç gün kaldı 2026",
+    "kpss geri sayım",
+    "kpss ne kadar kaldı",
+  ],
+  alternates: { canonical: canonicalPath },
+  openGraph: {
+    title: "KPSS kaç gün kaldı — güncel canlı sayaç",
+    description:
+      "Lisans, ön lisans, ortaöğretim KPSS ve AGS için kalan süreyi tek sayfada görün. Canlı geri sayım.",
+    url: canonicalPath,
+    locale: "tr_TR",
+    type: "website",
+  },
 };
 
 const slot = process.env.NEXT_PUBLIC_ADSENSE_SLOT_ARTICLE ?? "";
+
+function faqJsonLd() {
+  const payload = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "KPSS kaç gün kaldı?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Bu sayfada lisans, ön lisans, ortaöğretim (lise) KPSS ile AGS için sınav anına kalan süre canlı olarak gösterilir. Kesin sınav saati ve salon bilgisi için ÖSYM kılavuzunu kullanın.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "KPSS kaç gün kaldı hesabı nasıl yapılır?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Kalan süre İstanbul (UTC+3) takvimine göre hesaplanır; sınav günü ve saatine kadar kalan gün, saat, dakika ve saniye gösterilir.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Lisans, ön lisans ve ortaöğretim KPSS aynı tarihte mi?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Aday grubuna göre oturum ve takvim farklı olabilir. Bu yüzden her hedef için ayrı sayaç kartı sunulur.",
+        },
+      },
+    ],
+  };
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(payload) }} />
+  );
+}
 
 export default function KpssKacGunKaldiPage() {
   const today = longTurkishDate();
 
   return (
     <main className="mx-auto max-w-6xl px-3 py-12 sm:px-5 sm:py-16 lg:px-8">
-      <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">KPSS&apos;ye kaç gün kaldı?</h1>
+      {faqJsonLd()}
+      <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">KPSS kaç gün kaldı?</h1>
+      <p className="mt-2 text-lg text-white/90 sm:text-xl">
+        Güncel canlı sayaç: lisans, ön lisans, ortaöğretim KPSS ve AGS
+      </p>
       <p className="mt-3 text-sm text-cyan-100/80">Güncellenen referans tarihi: {today}</p>
 
       <p className="mt-6 text-base leading-relaxed text-white/80">
