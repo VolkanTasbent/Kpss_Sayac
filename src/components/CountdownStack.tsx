@@ -76,12 +76,6 @@ export function CountdownStack({ exams }: { exams: ExamInfo[] }) {
               })}
             </div>
 
-            <p className="mt-3 text-[11px] leading-snug text-white/45 sm:mt-4 sm:text-xs">
-              Ay göstergesi 30 günlük birimdir (takvim ayı değil). Sınav saati kılavuza göre{" "}
-              <code className="rounded bg-white/10 px-1 py-0.5 text-[10px] text-white/70">startTimeTR</code> alanından
-              düzenlenir.
-            </p>
-
             <p className="mt-2 text-xs text-white/55">
               Hedef:{" "}
               <time dateTime={new Date(targetMs).toISOString()}>

@@ -23,8 +23,7 @@ export default function HomePage() {
               KPSS (lisans, ön lisans, ortaöğretim) ve AGS geri sayım
             </h1>
             <p className="mt-4 text-pretty text-base leading-relaxed text-white/75 sm:text-lg">
-              Lisans, ön lisans, ortaöğretim (lise) KPSS ile AGS tarihleri yan yana değil; alt alta, mobilde okunaklı
-              ve sade bir düzenle sunulur. Aşağıdaki sayaçlar İstanbul (UTC+3) takvim gününe göre kalan süreyi günceller.
+              Tüm sınavlar için kalan süreyi tek ekranda hızlıca takip edebilirsiniz.
             </p>
           </div>
           <div className="w-full">
@@ -42,40 +41,25 @@ export default function HomePage() {
           <article className="space-y-4 text-base leading-relaxed text-zinc-700">
             <h2 className="text-2xl font-semibold tracking-tight text-zinc-900">Neden ayrı sayaçlar?</h2>
             <p>
-              Kamu personel seçme sınavına hazırlanan adayların en çok ihtiyaç duyduğu bilgi, doğru sınav gününe göre
-              kalan süreyi görmektir. Lisans, ön lisans ve ortaöğretim (lise) KPSS oturumları farklı aday grupları ve
-              takvim dilimlerine sahiptir; AGS ise akademik başvurular için ayrı bir sınav takvimidir. Bu yüzden tek bir
-              genel sayaç yerine, her hedef için ayrı kart göstererek kafa karışıklığını azaltmayı hedefledik.
+              Her sınavın tarihi farklı olduğu için sayaçlar ayrı gösterilir. Böylece kendi hedefinize kalan süreyi tek
+              bakışta görebilirsiniz.
             </p>
             <h3 className="mt-8 text-xl font-semibold text-zinc-900">Geri sayım nasıl hesaplanıyor?</h3>
             <p>
-              Gün farkı, tam gün esasına göre hesaplanır; saat dilimi olarak Avrupa/İstanbul kullanılır. Sınav günü
-              geldiğinde değer sıfıra iner. Kesin oturum saatleri ve salon bilgileri için her zaman ÖSYM&apos;nin
-              güncel kılavuzunu esas alın; buradaki tarihler yayındaki özet takvime göre yapılandırılmıştır ve resmi
-              değişikliklerde güncellenmelidir.
+              Kalan süre İstanbul saatine göre otomatik güncellenir. Resmi saat ve sınav detayları için her zaman
+              ÖSYM&apos;nin güncel kılavuzunu kontrol edin.
             </p>
             <h3 className="mt-8 text-xl font-semibold text-zinc-900">Çalışma planına nasıl yansır?</h3>
             <p>
-              Kalan gün sayısı tek başına motivasyon sağlar; asıl fayda, haftalık tekrar bloklarını ve deneme
-              sıklığını gerçekçi biçimde ayarlamaktır. Net hesaplama bölümü, deneme sonrası hızlı karşılaştırma yapmanız
-              için pratik bir özet sunar; nihai puan dönüşümü ise sınav yılındaki katsayılar ve kurallarla belirlenir.
-            </p>
-            <h3 className="mt-8 text-xl font-semibold text-zinc-900">Site haritası ve içerik</h3>
-            <p>
-              Arama motorlarında sürdürülebilir görünürlük için yalnızca sayaç yetmez; farklı arama niyetleri için ayrı
-              sayfalar da vardır (&quot;kaç gün kaldı&quot;, &quot;geri sayım&quot;, &quot;2026 KPSS&quot; vb.). Üst
-              menüde en çok aranan birkaç bağlantı vardır; kalanları aşağıdaki site haritası satırında, footer’da ve{" "}
-              <code className="rounded bg-zinc-200 px-1 text-xs">sitemap.xml</code> içinde bulabilirsiniz. Net
-              hesaplama sayfası formülü ve sınırlarını açıkça anlatır.
+              Kalan gün sayısını planınıza göre kullanarak haftalık tekrar ve deneme düzeninizi daha kolay
+              oluşturabilirsiniz.
             </p>
             <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3">
               <SiteMapInline variant="onLight" />
             </div>
             <h3 className="mt-8 text-xl font-semibold text-zinc-900">Şeffaflık ve reklam politikaları</h3>
             <p>
-              Ziyaretçilerin haklarını netleştirmek ve üçüncü taraf reklam teknolojilerinde beklentiyi yönetmek için
-              ayrı yasal sayfalar tutuyoruz. Kişisel verilerin işlenmesi, çerezler ve hizmetin hukuki çerçevesi şu
-              belgelerde açıklanır:{" "}
+              Kişisel veriler, çerezler ve kullanım şartlarıyla ilgili detayları şu sayfalarda bulabilirsiniz:{" "}
               <Link className="font-medium text-cyan-700 underline-offset-4 hover:underline" href="/gizlilik-politikasi">
                 gizlilik politikası
               </Link>
@@ -87,8 +71,7 @@ export default function HomePage() {
               <Link className="font-medium text-cyan-700 underline-offset-4 hover:underline" href="/kullanim-kosullari">
                 kullanım koşulları
               </Link>
-              . Bu sayfalar yalnızca şablon değil; siteye özgü dil ve kapsamla yazıldı; yayıncı olarak iletişim
-              e-postanızı ortam değişkeniyle eklemeniz, KVKK başvurularında izlenebilirlik sağlar.
+              .
             </p>
           </article>
         </div>

@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KPSS Sayaç Web
 
-## Getting Started
+KPSS (lisans, on lisans, ortaogretim) ve AGS icin geri sayim ve temel net hesaplama sunan Next.js uygulamasi.
 
-First, run the development server:
+## Gereksinimler
+
+- Node.js 20+
+- npm 10+
+
+## Yerel Gelistirme
+
+1. Bagimliliklari kurun:
+
+```bash
+npm install
+```
+
+2. Ortam degiskenlerini hazirlayin:
+
+```bash
+cp .env.example .env.local
+```
+
+3. Gelistirme sunucusunu calistirin:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Tarayicida acin: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Ortam Degiskenleri
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`.env.example` icindeki alanlar:
 
-## Learn More
+- `NEXT_PUBLIC_SITE_URL`: Canli domain. `robots.txt` ve `sitemap.xml` icin kullanilir.
+- `NEXT_PUBLIC_CONTACT_EMAIL`: Gizlilik politikasi sayfasindaki iletisim adresi.
+- `NEXT_PUBLIC_ADSENSE_CLIENT`: Google AdSense yayinci kimligi (`ca-pub-...`).
+- `NEXT_PUBLIC_ADSENSE_SLOT_HOME`: Ana sayfa reklam birimi.
+- `NEXT_PUBLIC_ADSENSE_SLOT_ARTICLE`: Icerik sayfalari reklam birimi.
+- `NEXT_PUBLIC_ADSENSE_SLOT_TOOL`: Arac sayfalari reklam birimi.
 
-To learn more about Next.js, take a look at the following resources:
+Not: AdSense degiskenleri bos olsa bile site calisir; ilgili alanlarda bilgilendirici placeholder gorunur.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Uretim Build ve Calistirma
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Uretim paketini olusturmak ve dogrulamak icin:
 
-## Deploy on Vercel
+```bash
+npm run lint
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Uretim modunda lokal calistirma:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run start
+```
+
+## Yayin Oncesi Kontrol Listesi
+
+- [ ] `NEXT_PUBLIC_SITE_URL` canli domain ile guncellendi.
+- [ ] `NEXT_PUBLIC_CONTACT_EMAIL` girildi.
+- [ ] AdSense kullanilacaksa `NEXT_PUBLIC_ADSENSE_*` alanlari girildi.
+- [ ] `npm run lint` hatasiz.
+- [ ] `npm run build` hatasiz.
+- [ ] Ana sayfa ve kritik rotalar mobil/masaustu kontrol edildi.
+
+## Teknoloji
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4

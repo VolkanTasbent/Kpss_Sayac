@@ -53,7 +53,7 @@ export const ORTAOGRETIM_P94_SCORE_AT_CALIB_NETS = 81.85 - SCORE_CALIB_DOWN_SHIF
 
 export const SCORE_METHOD_NOTES: Record<ExamKey, string> = {
   kpss_lisans:
-    "Özet: net → yaklaşık standart; P10’da GY %30 + GK %30 + EB %40 (EB yokken standart 50). Gösterge, havuz ortası (blend≈50→54,5) ile GY 45,25 / GK 24 referansı (~79,0) arasında doğrusal kabdır; standart üst kesit 90’a kadar. Kesin puan ÖSYM’dir.",
+    "Lisans için gösterilen puan bilgilendirme amaçlı tahmindir; kesin değer yalnızca ÖSYM sonuç belgesinde yer alır.",
   kpss_onlisans:
     "P93: ASP = %50 GY + %50 GK. İki nokta doğrusu (25/20 net ≈71,4; 45,25/24 net ≈82,8). Kesin P93 ÖSYM’dir.",
   kpss_ortaogretim:

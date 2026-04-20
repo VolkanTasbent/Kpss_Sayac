@@ -4,10 +4,6 @@ import { useMemo, useState } from "react";
 import type { ExamKey } from "@/config/exams";
 import {
   SCORE_METHOD_NOTES,
-  TYPICAL_NET_MEAN_GK,
-  TYPICAL_NET_MEAN_GY,
-  TYPICAL_NET_SIGMA_GK,
-  TYPICAL_NET_SIGMA_GY,
 } from "@/config/scoreApprox";
 import { approximateExamBreakdown } from "@/lib/kpss-approx-score";
 import { sectionNet, totalNet } from "@/lib/kpss-net";
@@ -87,33 +83,7 @@ export function NetCalculator() {
     <section className="w-full max-w-2xl rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
       <div className="flex flex-col gap-2">
         <h2 className="text-2xl font-semibold tracking-tight text-zinc-900">KPSS net hesaplama</h2>
-        <p className="text-sm leading-relaxed text-zinc-600">
-          Net:{" "}
-          <span className="font-medium text-zinc-800">doğru − (yanlış ÷ 4)</span>. Kamuoyunda ve hesaplama
-          sitelerinde özetlenen puan yolu: ham netlerden standart puan (ortalaması 50, standart sapması 10 olacak
-          şekilde normalize edilen), ardından puan türüne göre ağırlıklar (
-          <a
-            className="font-medium text-cyan-700 underline-offset-4 hover:underline"
-            href="https://kpss-lisans-puan.hesaplama.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            örnek özet
-          </a>
-          ,{" "}
-          <a
-            className="font-medium text-cyan-700 underline-offset-4 hover:underline"
-            href="https://m.haberturk.com/kpss-puan-hesaplama-formulu-2025-kpss-lisans-puani-nasil-hesaplanir-4-yanlis-1-dogruyu-goturuyor-mu-osym-kilavuzu-ile-kpss-puan-hesaplama-yontemi-3821893"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Habertürk / kılavuz özeti
-          </a>
-          ). Lisans (P10 göstergesi), ön lisans (
-          <strong className="font-semibold text-zinc-800">P93</strong>) ve ortaöğretim (
-          <strong className="font-semibold text-zinc-800">P94</strong>) aynı standart kabından ASP (%50 GY + %50 GK)
-          türetir; P93 ve P94 puana iki nokta kalibrasyonuyla gider. Kesin değer yalnızca ÖSYM sonuçlarındadır.
-        </p>
+        <p className="text-sm leading-relaxed text-zinc-600">Doğru ve yanlış sayılarını girerek netinizi hesaplayın.</p>
       </div>
 
       <div className="mt-5">
@@ -141,18 +111,6 @@ export function NetCalculator() {
       <div className="mt-6 flex flex-col gap-4">
         <FieldRow title="Genel Yetenek" correct={gyD} wrong={gyY} onCorrect={setGyD} onWrong={setGyY} />
         <FieldRow title="Genel Kültür" correct={gkD} wrong={gkY} onCorrect={setGkD} onWrong={setGkY} />
-      </div>
-
-      <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-xs leading-relaxed text-zinc-600">
-        <span className="font-medium text-zinc-800">Yaklaşık standart (GY):</span>{" "}
-        <span className="tabular-nums">{breakdown.stanGy.toFixed(1)}</span>
-        {" · "}
-        <span className="font-medium text-zinc-800">Yaklaşık standart (GK):</span>{" "}
-        <span className="tabular-nums">{breakdown.stanGk.toFixed(1)}</span>
-        <span className="mt-1 block text-zinc-500">
-          2024 ÖSYM KPSS Lisans sayısal bilgileri: GY μ = {TYPICAL_NET_MEAN_GY}, σ = {TYPICAL_NET_SIGMA_GY}; GK μ ={" "}
-          {TYPICAL_NET_MEAN_GK}, σ = {TYPICAL_NET_SIGMA_GK}. Yaklaşık standart kabı buna göre; gösterge yine kesin değildir.
-        </span>
       </div>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">

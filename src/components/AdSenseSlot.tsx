@@ -32,34 +32,9 @@ export function AdSenseSlot({ slot = "", className }: Props) {
     }
   }, [client, slot]);
 
-  if (!client) {
-    return (
-      <div
-        className={
-          className ??
-          "mx-auto flex min-h-[120px] w-full max-w-4xl items-center justify-center rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 px-4 text-center text-sm text-zinc-500"
-        }
-      >
-        Reklam alanı hazır. AdSense için{" "}
-        <code className="mx-1 rounded bg-zinc-200 px-1 py-0.5 text-xs">NEXT_PUBLIC_ADSENSE_CLIENT</code> tanımlayın.
-      </div>
-    );
-  }
-
-  if (!slot) {
-    return (
-      <div
-        className={
-          className ??
-          "mx-auto flex min-h-[100px] w-full max-w-4xl items-center justify-center rounded-2xl border border-dashed border-amber-200/60 bg-amber-50/90 px-4 text-center text-sm text-amber-900/80"
-        }
-      >
-        Yayıncı kimliği tanımlı; reklam birimi için{" "}
-        <code className="mx-1 rounded bg-amber-100 px-1 py-0.5 text-xs">data-ad-slot</code> değerini{" "}
-        <code className="mx-1 rounded bg-amber-100 px-1 py-0.5 text-xs">NEXT_PUBLIC_ADSENSE_SLOT_*</code> ile verin.
-      </div>
-    );
-  }
+  // Onay surecinde kullaniciya teknik placeholder gostermemek icin
+  // reklam ayari yoksa blok hic render edilmez.
+  if (!client || !slot) return null;
 
   return (
     <div className={className ?? "mx-auto w-full max-w-4xl"}>

@@ -69,6 +69,8 @@ export const HEADER_NAV_LINKS = [
 ] as const;
 
 export const LEGAL_SITEMAP_PATHS = [
+  "/hakkimizda",
+  "/iletisim",
   "/gizlilik-politikasi",
   "/cerez-politikasi",
   "/kullanim-kosullari",

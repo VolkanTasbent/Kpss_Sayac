@@ -34,6 +34,12 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex w-full max-w-[min(100%,88rem)] flex-col gap-6">
           <SiteMapInline variant="onDark" />
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-white/70">
+            <Link className="hover:text-cyan-200" href="/hakkimizda">
+              Hakkımızda
+            </Link>
+            <Link className="hover:text-cyan-200" href="/iletisim">
+              İletişim
+            </Link>
             <Link className="hover:text-cyan-200" href="/gizlilik-politikasi">
               Gizlilik politikası
             </Link>

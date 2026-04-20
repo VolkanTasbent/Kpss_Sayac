@@ -1,0 +1,3 @@
+# Google AdSense onayindan sonra asagidaki satiri gercek yayinci kimliginizle guncelleyin.
+# Ornek: google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-REPLACE_WITH_YOUR_PUBLISHER_ID, DIRECT, f08c47fec0942fa0
