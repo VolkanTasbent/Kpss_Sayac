@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { headers } from "next/headers";
 import Script from "next/script";
 import { SiteShell } from "@/components/SiteShell";
 import "./globals.css";
@@ -16,21 +17,45 @@ const geistMono = Geist_Mono({
 
 const adsClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
-export const metadata: Metadata = {
-  title: {
-    default: "KPSS Sayaç — Lisans, ön lisans, ortaöğretim ve AGS geri sayım",
-    template: "%s | KPSS Sayaç",
-  },
-  description:
-    "KPSS lisans, ön lisans, ortaöğretim ve AGS sınavlarına kalan günleri İstanbul saatine göre hesaplayın. KPSS net hesaplama aracı ve güncel içerik.",
-  openGraph: {
-    title: "KPSS Sayaç",
-    description: "Lisans, ön lisans, ortaöğretim KPSS ve AGS için geri sayım ve net hesaplama.",
-    locale: "tr_TR",
-    type: "website",
-  },
-  robots: { index: true, follow: true },
-};
+function requestMetadataBase(): URL {
+  const fallback = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kpsssayac.com";
+  try {
+    return new URL(fallback);
+  } catch {
+    return new URL("https://kpsssayac.com");
+  }
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = await headers();
+  const host = headersList.get("x-forwarded-host") ?? headersList.get("host") ?? "";
+  const proto = headersList.get("x-forwarded-proto") ?? "https";
+  let metadataBase = requestMetadataBase();
+  if (host && !host.startsWith("localhost") && !host.startsWith("127.0.0.1")) {
+    try {
+      metadataBase = new URL(`${proto}://${host}`);
+    } catch {
+      /* keep fallback */
+    }
+  }
+
+  return {
+    metadataBase,
+    title: {
+      default: "KPSS Sayaç — Lisans, ön lisans, ortaöğretim ve AGS geri sayım",
+      template: "%s | KPSS Sayaç",
+    },
+    description:
+      "KPSS lisans, ön lisans, ortaöğretim ve AGS sınavlarına kalan günleri İstanbul saatine göre hesaplayın. KPSS net hesaplama aracı ve güncel içerik.",
+    openGraph: {
+      title: "KPSS Sayaç",
+      description: "Lisans, ön lisans, ortaöğretim KPSS ve AGS için geri sayım ve net hesaplama.",
+      locale: "tr_TR",
+      type: "website",
+    },
+    robots: { index: true, follow: true },
+  };
+}
 
 export default function RootLayout({
   children,
