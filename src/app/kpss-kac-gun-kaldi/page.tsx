@@ -8,7 +8,7 @@ import { longTurkishDate } from "@/lib/dates";
 export const metadata: Metadata = {
   title: "KPSS'ye kaç gün kaldı? Güncel süre",
   description:
-    "KPSS lisans, ön lisans ve AGS için kaç gün kaldı sorusunun cevabı: canlı geri sayım, takvim günü ve sınav saati odaklı açıklamalar.",
+    "KPSS lisans, ön lisans, ortaöğretim ve AGS için kaç gün kaldı sorusunun cevabı: canlı geri sayım ve açıklamalar.",
   keywords: ["kpss kaç gün kaldı", "kpssye kaç gün kaldı", "kpss geri sayım gün"],
 };
 
@@ -43,10 +43,10 @@ export default function KpssKacGunKaldiPage() {
         gösterir; böylece hem makro hem mikro plan yapabilirsiniz.
       </p>
 
-      <h2 className="mt-8 text-xl font-semibold text-white">Lisans, ön lisans ve AGS aynı sayaçta mı?</h2>
+      <h2 className="mt-8 text-xl font-semibold text-white">Lisans, ön lisans, ortaöğretim ve AGS aynı sayaçta mı?</h2>
       <p className="mt-3 text-base leading-relaxed text-white/80">
-        Hayır. Üç hedef farklı oturum ve farklı kılavuz satırlarına bağlıdır. Lisans KPSS ile ön lisans KPSS aynı
-        kelime öbekleriyle aransa da başvuru koşulları ve test kurgusu ayrışır; AGS ise akademik başvuru hattında
+        Hayır. Dört hedef farklı oturum ve farklı kılavuz satırlarına bağlıdır. Lisans, ön lisans ve ortaöğretim (lise)
+        KPSS aynı kelime öbekleriyle aransa da başvuru koşulları ve aday profili ayrışır; AGS akademik başvuru hattında
         ayrı bir sınavdır. Bu sayfada her biri için ayrı kart görmek, yanlış tarihe kilitlenmenizi azaltır.
       </p>
 

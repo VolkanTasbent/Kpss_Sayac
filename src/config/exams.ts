@@ -2,7 +2,7 @@
  * Sınav tarihleri ÖSYM takvimine göre güncellenmelidir.
  * 2026 için yayında görünen takvim özetine göre ayarlandı; kesin bilgi için osym.gov.tr.
  */
-export type ExamKey = "kpss_lisans" | "kpss_onlisans" | "ags";
+export type ExamKey = "kpss_lisans" | "kpss_onlisans" | "kpss_ortaogretim" | "ags";
 
 export type ExamInfo = {
   key: ExamKey;
@@ -32,6 +32,14 @@ export const EXAMS: ExamInfo[] = [
     title: "KPSS Ön Lisans",
     subtitle: "Genel Yetenek–Genel Kültür oturumu (2026 takvim özeti)",
     dateISO: "2026-10-04",
+    startTimeTR: "10:15:00",
+    href: "https://www.osym.gov.tr",
+  },
+  {
+    key: "kpss_ortaogretim",
+    title: "KPSS Ortaöğretim",
+    subtitle: "Lise mezunları — Genel Yetenek–Genel Kültür (2026 takvim özeti)",
+    dateISO: "2026-10-25",
     startTimeTR: "10:15:00",
     href: "https://www.osym.gov.tr",
   },

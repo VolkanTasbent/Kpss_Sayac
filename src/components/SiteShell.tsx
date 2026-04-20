@@ -1,24 +1,23 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { SiteMapInline } from "@/components/SiteMapInline";
+import { HEADER_NAV_LINKS } from "@/config/site-map-links";
 
-/** Üst menü sade; diğer sayfalar ana sayfa + footer site haritası + sitemap ile bulunur. */
-const nav = [
-  { href: "/", label: "Ana sayfa" },
-  { href: "/kpss-sayac", label: "Sayaç" },
-  { href: "/kpss-net-hesaplama", label: "Net hesaplama" },
-];
+const LINKEDIN_VOLKAN = "https://www.linkedin.com/in/volkan-tasbent/";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-full flex-col">
       <header className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
-        <div className="mx-auto flex w-full max-w-[min(100%,88rem)] flex-col gap-3 px-3 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5 lg:px-8">
+        <div className="mx-auto flex w-full max-w-[min(100%,88rem)] flex-row flex-wrap items-center justify-between gap-3 px-3 py-4 sm:px-5 lg:px-8">
           <Link href="/" className="text-lg font-semibold tracking-tight text-white">
             KPSS Sayaç
           </Link>
-          <nav className="flex flex-wrap gap-2 text-sm">
-            {nav.map((n) => (
+          <nav
+            className="flex flex-wrap justify-end gap-2 text-sm sm:ml-auto"
+            aria-label="Ana navigasyon"
+          >
+            {HEADER_NAV_LINKS.map((n) => (
               <Link
                 key={n.href}
                 href={n.href}
@@ -48,10 +47,21 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p>
               Bu site bilgilendirme amaçlıdır; kesin tarihler ve kurallar için ÖSYM resmi kaynaklarını kullanın.
-              Ek KPSS sayfaları üst menüde yok; site haritası satırı, ana sayfa metni ve sitemap ile erişilebilir.
+              Tüm içerik sayfalarına üst menü, site haritası satırı ve sitemap ile ulaşılabilir.
             </p>
             <p className="shrink-0 text-white/40">© {new Date().getFullYear()} KPSS Sayaç</p>
           </div>
+          <p className="border-t border-white/10 pt-6 text-center text-xs text-white/45 sm:text-left">
+            Created by{" "}
+            <a
+              href={LINKEDIN_VOLKAN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-300/90 underline-offset-4 transition hover:text-cyan-200 hover:underline"
+            >
+              Volkan Taşbent
+            </a>
+          </p>
         </div>
       </footer>
     </div>

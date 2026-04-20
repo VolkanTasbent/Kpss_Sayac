@@ -8,7 +8,7 @@ import { longTurkishDate } from "@/lib/dates";
 export const metadata: Metadata = {
   title: "KPSS’ye ne kadar kaldı? Planlama rehberi",
   description:
-    "Kalan süreyi haftalık plana çevirmek için pratik öneriler. Lisans, ön lisans KPSS ve AGS sayaçları.",
+    "Kalan süreyi haftalık plana çevirmek için pratik öneriler. Lisans, ön lisans, ortaöğretim KPSS ve AGS sayaçları.",
 };
 
 const slot = process.env.NEXT_PUBLIC_ADSENSE_SLOT_ARTICLE ?? "";
@@ -51,8 +51,9 @@ export default function KpssNeKadarKaldiPage() {
       </ol>
 
       <p className="mt-8 text-base leading-relaxed text-white/80">
-        AGS ile KPSS aynı gün değildir; iki hedefi birlikte taşıyorsanız takvim çakışmalarını erken görün. Lisans ve ön
-        lisans adayları da farklı kılavuz satırlarına tabi olabileceğinden, başvuru pencerelerini ÖSYM duyurularından
+        AGS ile KPSS aynı gün değildir; birden fazla hedef taşıyorsanız takvim çakışmalarını erken görün. Lisans, ön
+        lisans ve ortaöğretim adayları farklı kılavuz satırlarına tabi olabileceğinden, başvuru pencerelerini ÖSYM
+        duyurularından
         doğrulamak en güvenli yoldur.
       </p>
 

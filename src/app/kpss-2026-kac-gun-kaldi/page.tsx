@@ -8,7 +8,7 @@ import { longTurkishDate, wholeDaysUntilCalendarEnd } from "@/lib/dates";
 export const metadata: Metadata = {
   title: "KPSS 2026 kaç gün kaldı?",
   description:
-    "2026 KPSS lisans, ön lisans ve AGS için İstanbul takvimine göre kalan günler. Tarihleri ÖSYM ile doğrulayın.",
+    "2026 KPSS lisans, ön lisans, ortaöğretim ve AGS için İstanbul takvimine göre kalan günler. Tarihleri ÖSYM ile doğrulayın.",
 };
 
 const slot = process.env.NEXT_PUBLIC_ADSENSE_SLOT_ARTICLE ?? "";
@@ -22,7 +22,8 @@ export default function Kpss2026KacGunKaldiPage() {
       <p className="mt-3 text-sm text-cyan-100/80">Güncel tarih: {today}</p>
       <p className="mt-6 text-base leading-relaxed text-white/80">
         Bu sayfa özellikle &quot;kaç gün&quot; niyetiyle arama yapan adaylar içindir: elimizdeki hedef tarihlere göre
-        kalan tam gün sayısını net biçimde gösteririz. Lisans ve ön lisans KPSS ile AGS farklı başlıklar olduğundan, her
+        kalan tam gün sayısını net biçimde gösteririz. Lisans, ön lisans ve ortaöğretim KPSS ile AGS farklı başlıklar
+        olduğundan, her
         biri için ayrı sayaç görürsünüz. Tarihler yayındaki özet takvime göre yapılandırılmıştır; resmi değişiklik
         olursa yapılandırmayı güncellemeniz gerekir.
       </p>

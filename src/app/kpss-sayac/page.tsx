@@ -7,7 +7,7 @@ import { longTurkishDate } from "@/lib/dates";
 
 export const metadata: Metadata = {
   title: "KPSS sayacı — canlı gün sayacı",
-  description: "Lisans KPSS, ön lisans KPSS ve AGS için sade geri sayım aracı.",
+  description: "Lisans, ön lisans, ortaöğretim KPSS ve AGS için sade geri sayım aracı.",
 };
 
 const slot = process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL ?? "";

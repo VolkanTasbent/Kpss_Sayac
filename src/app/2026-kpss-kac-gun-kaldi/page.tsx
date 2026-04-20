@@ -8,7 +8,7 @@ import { longTurkishDate } from "@/lib/dates";
 export const metadata: Metadata = {
   title: "2026 KPSS kaç gün kaldı?",
   description:
-    "2026 KPSS ve AGS için kalan süre: lisans, ön lisans ve AGS geri sayımı. Başvuru ve sınav takvimini ÖSYM ile doğrulayın.",
+    "2026 KPSS (lisans, ön lisans, ortaöğretim) ve AGS için kalan süre. Başvuru ve sınav takvimini ÖSYM ile doğrulayın.",
   keywords: ["2026 kpss kaç gün kaldı", "2026 kpss", "kpss 2026 geri sayım"],
 };
 
@@ -38,7 +38,7 @@ export default function Y2026KpssKacGunKaldiPage() {
       <h2 className="text-xl font-semibold text-white">2026 turunda nelere dikkat?</h2>
       <ol className="mt-4 list-decimal space-y-3 pl-5 text-base leading-relaxed text-white/80">
         <li>
-          <span className="font-medium text-white">Takvim:</span> Lisans, ön lisans ve AGS için sınav günleri ve
+          <span className="font-medium text-white">Takvim:</span> Lisans, ön lisans, ortaöğretim ve AGS için sınav günleri ve
           başvuru pencereleri farklıdır. Tek bir &quot;KPSS günü&quot; yoktur; hangi oturuma gireceğinizi erken
           netleştirin.
         </li>

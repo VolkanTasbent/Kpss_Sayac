@@ -13,8 +13,8 @@ export default function KpssRehberPage() {
     <main className="mx-auto max-w-3xl px-3 py-12 sm:px-5 sm:py-16 lg:px-8">
       <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">KPSS rehberi</h1>
       <p className="mt-4 text-base leading-relaxed text-white/80">
-        Üst menüde bu sayfalar yok; ana sayfadaki site haritası satırı ve alttaki footer aynı linkleri gösterir.
-        Arama motorundan doğrudan bir alt sayfaya düşmüş olabilirsiniz — ana deneyim için{" "}
+        Üst menüde en sık kullanılan birkaç sayfa vardır; tüm konu sayfaları burada ve alttaki footer site haritasında
+        listelenir. Arama motorundan doğrudan bir alt sayfaya düşmüş olabilirsiniz — ana deneyim için{" "}
         <Link className="text-cyan-300 underline-offset-4 hover:underline" href="/">
           ana sayfaya
         </Link>{" "}

@@ -20,12 +20,11 @@ export default function HomePage() {
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm text-cyan-100/80">Bugün: {today}</p>
             <h1 className="mt-2 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              KPSS ve AGS için modern geri sayım
+              KPSS (lisans, ön lisans, ortaöğretim) ve AGS geri sayım
             </h1>
             <p className="mt-4 text-pretty text-base leading-relaxed text-white/75 sm:text-lg">
-              Lisans KPSS, ön lisans KPSS ve AGS tarihleri yan yana değil; alt alta, mobilde okunaklı ve sade bir düzenle
-              sunulur. Aşağıdaki sayaçlar İstanbul (UTC+3) takvim gününe göre &quot;kaç gün kaldı&quot; bilgisini
-              günceller.
+              Lisans, ön lisans, ortaöğretim (lise) KPSS ile AGS tarihleri yan yana değil; alt alta, mobilde okunaklı
+              ve sade bir düzenle sunulur. Aşağıdaki sayaçlar İstanbul (UTC+3) takvim gününe göre kalan süreyi günceller.
             </p>
           </div>
           <div className="w-full">
@@ -44,8 +43,8 @@ export default function HomePage() {
             <h2 className="text-2xl font-semibold tracking-tight text-zinc-900">Neden ayrı sayaçlar?</h2>
             <p>
               Kamu personel seçme sınavına hazırlanan adayların en çok ihtiyaç duyduğu bilgi, doğru sınav gününe göre
-              kalan süreyi görmektir. Lisans düzeyindeki KPSS ile ön lisans düzeyindeki KPSS farklı oturum ve takvim
-              dilimlerine sahip olabilir; AGS ise akademik başvurular için ayrı bir sınav takvimidir. Bu yüzden tek bir
+              kalan süreyi görmektir. Lisans, ön lisans ve ortaöğretim (lise) KPSS oturumları farklı aday grupları ve
+              takvim dilimlerine sahiptir; AGS ise akademik başvurular için ayrı bir sınav takvimidir. Bu yüzden tek bir
               genel sayaç yerine, her hedef için ayrı kart göstererek kafa karışıklığını azaltmayı hedefledik.
             </p>
             <h3 className="mt-8 text-xl font-semibold text-zinc-900">Geri sayım nasıl hesaplanıyor?</h3>
@@ -64,10 +63,10 @@ export default function HomePage() {
             <h3 className="mt-8 text-xl font-semibold text-zinc-900">Site haritası ve içerik</h3>
             <p>
               Arama motorlarında sürdürülebilir görünürlük için yalnızca sayaç yetmez; farklı arama niyetleri için ayrı
-              sayfalar da vardır (&quot;kaç gün kaldı&quot;, &quot;geri sayım&quot;, &quot;2026 KPSS&quot; vb.). Üst menü
-              sade kalsın diye bu sayfalar menüde listelenmez; aşağıdaki satırda doğrudan linkler, altta footer’da aynı
-              liste ve <code className="rounded bg-zinc-200 px-1 text-xs">sitemap.xml</code> ile arama motorlarına
-              yol gösterilir. Net hesaplama sayfası formülü ve sınırlarını açıkça anlatır.
+              sayfalar da vardır (&quot;kaç gün kaldı&quot;, &quot;geri sayım&quot;, &quot;2026 KPSS&quot; vb.). Üst
+              menüde en çok aranan birkaç bağlantı vardır; kalanları aşağıdaki site haritası satırında, footer’da ve{" "}
+              <code className="rounded bg-zinc-200 px-1 text-xs">sitemap.xml</code> içinde bulabilirsiniz. Net
+              hesaplama sayfası formülü ve sınırlarını açıkça anlatır.
             </p>
             <div className="mt-4 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3">
               <SiteMapInline variant="onLight" />

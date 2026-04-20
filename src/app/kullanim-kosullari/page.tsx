@@ -32,9 +32,10 @@ export default function TermsPage() {
       <section className="space-y-4">
         <h2 className="text-xl font-semibold text-white">3. Net hesaplama aracı</h2>
         <p>
-          Net hesaplama, yaygın çoktan seçmeli formülü örnekler. Gerçek sınavda soru iptali, cevap anahtarı değişikliği
-          veya farklı test yapıları sonucu değiştirebilir. Araçtan elde edilen sonuçların doğruluğu, eksiksizliği veya
-          belirli bir sonucu garanti ettiği iddia edilemez.
+          Net hesaplama, yaygın çoktan seçmeli formülü örnekler; lisans, ön lisans ve ortaöğretim için gösterilen
+          tahmini puanlar ÖSYM sonucunun yerine geçmez. AGS için ise bu GY/GK girişleriyle resmi puan üretilmez.
+          Gerçek sınavda soru iptali, cevap anahtarı değişikliği veya farklı test yapıları sonucu değiştirebilir.
+          Araçtan elde edilen sonuçların doğruluğu, eksiksizliği veya belirli bir sonucu garanti ettiği iddia edilemez.
         </p>
       </section>
 

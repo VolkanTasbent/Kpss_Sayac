@@ -18,14 +18,14 @@ const adsClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
 export const metadata: Metadata = {
   title: {
-    default: "KPSS Sayaç — Lisans, ön lisans ve AGS geri sayım",
+    default: "KPSS Sayaç — Lisans, ön lisans, ortaöğretim ve AGS geri sayım",
     template: "%s | KPSS Sayaç",
   },
   description:
-    "KPSS lisans, KPSS ön lisans ve AGS sınavlarına kalan günleri İstanbul saatine göre hesaplayın. KPSS net hesaplama aracı ve güncel içerik.",
+    "KPSS lisans, ön lisans, ortaöğretim ve AGS sınavlarına kalan günleri İstanbul saatine göre hesaplayın. KPSS net hesaplama aracı ve güncel içerik.",
   openGraph: {
     title: "KPSS Sayaç",
-    description: "Lisans, ön lisans KPSS ve AGS için geri sayım ve net hesaplama.",
+    description: "Lisans, ön lisans, ortaöğretim KPSS ve AGS için geri sayım ve net hesaplama.",
     locale: "tr_TR",
     type: "website",
   },

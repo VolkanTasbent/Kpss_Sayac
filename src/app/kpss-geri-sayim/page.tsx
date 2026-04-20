@@ -8,7 +8,7 @@ import { longTurkishDate } from "@/lib/dates";
 export const metadata: Metadata = {
   title: "KPSS geri sayım — canlı süre",
   description:
-    "KPSS ve AGS için geri sayım: ay, gün, saat, dakika ve saniye. Sınav öncesi odak ve çalışma ritmi önerileri.",
+    "KPSS (lisans, ön lisans, ortaöğretim) ve AGS için geri sayım: ay, gün, saat, dakika ve saniye.",
   keywords: ["kpss geri sayım", "kpss sayaç", "kpss canlı geri sayım"],
 };
 
@@ -46,7 +46,7 @@ export default function KpssGeriSayimPage() {
 
       <h2 className="mt-8 text-xl font-semibold text-white">Üç sayaç yan yana değil, alt alta</h2>
       <p className="mt-3 text-base leading-relaxed text-white/80">
-        Mobil kullanımda okunabilirlik için kartlar alt alta dizilir. Lisans KPSS, ön lisans KPSS ve AGS farklı
+        Mobil kullanımda okunabilirlik için kartlar alt alta dizilir. Lisans, ön lisans, ortaöğretim KPSS ve AGS farklı
         başlıklar olduğundan, hangi hedefe odaklandığınızı görsel olarak seçmiş olursunuz. Oturum öncesi ekran
         görüntüsü alıp kendinize hatırlatma kurmak da yaygın bir yöntemdir; fakat tarih değişirse eski görüntü
         yanıltıcı olabilir.

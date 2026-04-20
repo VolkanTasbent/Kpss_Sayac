@@ -8,7 +8,7 @@ import { longTurkishDate } from "@/lib/dates";
 export const metadata: Metadata = {
   title: "KPSS ne zaman? Sınav tarihleri ve kontrol listesi",
   description:
-    "KPSS ve AGS ne zaman yapılır sorusu: hedef tarihler, ÖSYM’den doğrulama adımları ve canlı geri sayım.",
+    "KPSS (lisans, ön lisans, ortaöğretim) ve AGS ne zaman: hedef tarihler, ÖSYM doğrulama ve canlı geri sayım.",
   keywords: ["kpss ne zaman", "kpss sınavı ne zaman", "ags ne zaman"],
 };
 
@@ -38,7 +38,7 @@ export default function KpssNeZamanPage() {
 
       <h2 className="text-xl font-semibold text-white">ÖSYM üzerinden doğrulama (kısa)</h2>
       <ul className="mt-4 list-inside list-disc space-y-2 text-base leading-relaxed text-white/80">
-        <li>İlgili yılın sınav takvimini açın ve KPSS ile AGS satırlarını yan yana okuyun.</li>
+        <li>İlgili yılın sınav takvimini açın; lisans, ön lisans, ortaöğretim KPSS ve AGS satırlarını ayrı ayrı okuyun.</li>
         <li>Başvuru tarihleri ile sınav tarihini karıştırmayın; başvuru kapanmadan önce evrakları yükleyin.</li>
         <li>Engelli erişim ve özel durumlar için ayrı duyurular çıkabileceğinden kılavuzu baştan sona tarayın.</li>
       </ul>
@@ -52,9 +52,9 @@ export default function KpssNeZamanPage() {
 
       <h2 className="mt-8 text-xl font-semibold text-white">AGS ile KPSS aynı gün mü?</h2>
       <p className="mt-3 text-base leading-relaxed text-white/80">
-        Genelde hayır. Akademik Giriş Sınavı ile KPSS farklı amaçlara hizmet eder ve takvimde ayrı yer tutar. İkisine
-        birden hazırlanan adaylar için bu sayfadaki iki ayrı sayaç, planlama sırasında çakışmaları erken görmenizi
-        sağlar.
+        Genelde hayır. Akademik Giriş Sınavı ile KPSS farklı amaçlara hizmet eder ve takvimde ayrı yer tutar. Lisans,
+        ön lisans ve ortaöğretim KPSS oturumları da birbirinden farklı günlerde olabilir. Bu sayfadaki sayaçlar,
+        çakışmaları erken görmenize yardım eder.
       </p>
 
       <p className="mt-10 text-sm text-white/65">

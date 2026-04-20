@@ -39,6 +39,11 @@ export const SITE_MAP_LINKS = [
     hint: "Tarih doğrulama ve sınav günü rutini",
   },
   {
+    href: "/kpss-ortaogretim",
+    label: "KPSS ortaöğretim (lise)",
+    hint: "Lise KPSS sayacı ve net yönlendirmesi",
+  },
+  {
     href: "/kpss-net-hesaplama",
     label: "Net hesaplama",
     hint: "GY/GK neti ve tahmini puan seçenekleri",
@@ -51,6 +56,17 @@ export const SITE_MAP_LINKS = [
 ] as const;
 
 export type SiteMapLink = (typeof SITE_MAP_LINKS)[number];
+
+/**
+ * Üst şerit navigasyonu — `SITE_MAP_LINKS` ile aynı path’ler (404 veya yanlış etiket olmasın).
+ */
+export const HEADER_NAV_LINKS = [
+  { href: "/", label: "Ana sayfa" },
+  { href: "/kpss-sayac", label: "KPSS sayacı" },
+  { href: "/kpss-net-hesaplama", label: "Net hesaplama" },
+  { href: "/kpss-rehber", label: "Tüm konular" },
+  { href: "/kpss-kac-gun-kaldi", label: "Kaç gün kaldı" },
+] as const;
 
 export const LEGAL_SITEMAP_PATHS = [
   "/gizlilik-politikasi",

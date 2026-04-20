@@ -7,7 +7,7 @@ import { longTurkishDate } from "@/lib/dates";
 export const metadata: Metadata = {
   title: "KPSS net hesaplama",
   description:
-    "Genel Yetenek ve Genel Kültür için net hesaplama; lisans, ön lisans ve AGS için yaklaşık puan gösterimi (bilgilendirme).",
+    "GY/GK neti, yaklaşık standart puan; lisans (P10), ön lisans (P93), ortaöğretim (P94); AGS için ayrı test uyarısı.",
 };
 
 const slot = process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL ?? "";
@@ -21,11 +21,15 @@ export default function KpssNetHesaplamaPage() {
       <p className="mt-3 text-sm text-cyan-100/80">Tarih: {today}</p>
 
       <p className="mt-6 text-base leading-relaxed text-white/80">
-        Çoktan seçmeli testlerde en yaygın yaklaşım, her dört yanlışın bir doğruyu götürdüğü varsayımıdır. Bu sayfadaki
-        hesaplayıcı, Genel Yetenek ve Genel Kültür için ayrı ayrı doğru ve yanlış sayılarınızı alıp toplam neti
-        gösterir. Ayrıca seçtiğiniz sınav türüne (lisans, ön lisans veya AGS) göre, yapılandırılabilir bir doğrusal
-        kablo ile yaklaşık bir puan gösterilir; bu puan ÖSYM&apos;nin resmi hesabının yerine geçmez. Gerçek
-        puanınız; sınav yılındaki kurallar, soru iptalleri ve ÖSYM&apos;nin açıkladığı dönüşüm tablolarıyla şekillenir.
+        Net kuralı yaygın olarak dört yanlışın bir doğruyu götürmesi şeklindedir. Araç, GY ve GK netlerinden önce
+        basit bir standart puan kabı üretir; ardından lisans için P10 yapısına benzeyen (EB girilmediğinde EB
+        standart için 50 varsayılan) iki nokta kalibrasyonuyla tahmini gösterge üretir. Ön lisans{" "}
+        <strong className="font-semibold text-white">P93</strong> ve ortaöğretim{" "}
+        <strong className="font-semibold text-white">P94</strong> için de aynı standart kabı üzerinde ASP (%50 GY +
+        %50 GK) ve ayrı iki nokta doğrusu kullanılır (düşük uçta tablo özeti, yüksek uçta lisansla aynı referans
+        netleri). AGS farklı
+        alt testlerden oluşur; bu sayfadaki GY/GK alanlarından resmi AGS puanı çıkmaz. Kesin sonuç yalnızca ÖSYM /
+        kılavuzdadır.
       </p>
 
       <div className="my-10 flex justify-center text-zinc-900">
