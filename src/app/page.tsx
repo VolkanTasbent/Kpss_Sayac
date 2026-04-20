@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SiteMapInline } from "@/components/SiteMapInline";
-import { CountdownStack } from "@/components/CountdownStack";
+import { CountdownStackHost } from "@/components/CountdownStackHost";
 import { NetCalculator } from "@/components/NetCalculator";
 import { AdSenseSlot } from "@/components/AdSenseSlot";
 import { EXAMS } from "@/config/exams";
@@ -27,7 +27,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="w-full">
-            <CountdownStack exams={EXAMS} />
+            <CountdownStackHost exams={EXAMS} />
           </div>
         </div>
       </section>

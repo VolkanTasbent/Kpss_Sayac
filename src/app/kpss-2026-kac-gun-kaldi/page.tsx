@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CountdownStack } from "@/components/CountdownStack";
+import { CountdownStackHost } from "@/components/CountdownStackHost";
 import { AdSenseSlot } from "@/components/AdSenseSlot";
 import { EXAMS } from "@/config/exams";
 import { longTurkishDate, wholeDaysUntilCalendarEnd } from "@/lib/dates";
@@ -29,7 +29,7 @@ export default function Kpss2026KacGunKaldiPage() {
       </p>
 
       <div className="my-10 w-full">
-        <CountdownStack exams={EXAMS} />
+        <CountdownStackHost exams={EXAMS} />
       </div>
 
       <AdSenseSlot slot={slot} className="mb-10" />

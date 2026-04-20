@@ -21,8 +21,8 @@ function pad2(n: number) {
   return n.toString().padStart(2, "0");
 }
 
-export function CountdownStack({ exams }: { exams: ExamInfo[] }) {
-  const [nowMs, setNowMs] = useState(() => Date.now());
+export function CountdownStack({ exams, initialNowMs }: { exams: ExamInfo[]; initialNowMs: number }) {
+  const [nowMs, setNowMs] = useState(initialNowMs);
   useEffect(() => {
     const id = window.setInterval(() => setNowMs(Date.now()), 1000);
     return () => window.clearInterval(id);
