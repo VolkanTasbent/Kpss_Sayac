@@ -1,3 +1,1 @@
-# Google AdSense (yayıncı doğrulama / yetkili satıcılar)
-# https://support.google.com/adsense/answer/7532445
 google.com, pub-7469057180353724, DIRECT, f08c47fec0942fa0
