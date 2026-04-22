@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { headers } from "next/headers";
-import Script from "next/script";
 import { SiteShell } from "@/components/SiteShell";
 import "./globals.css";
 
@@ -64,16 +63,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full bg-slate-950 font-sans text-zinc-50">
+      <head>
         {adsClient ? (
-          <Script
-            id="adsense-init"
+          <script
             async
-            strategy="afterInteractive"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(adsClient)}`}
             crossOrigin="anonymous"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsClient}`}
           />
         ) : null}
+      </head>
+      <body className="min-h-full bg-slate-950 font-sans text-zinc-50">
         <SiteShell>{children}</SiteShell>
       </body>
     </html>
